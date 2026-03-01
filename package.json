@@ -15,6 +15,20 @@
       "require": "./dist/index.js"
     }
   },
+  "description": "SoybeanJS's eslint config for Vue projects.",
+  "author": {
+    "name": "Soybean",
+    "email": "soybeanjs@outlook.com",
+    "url": "https://github.com/soybeanjs"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/soybeanjs/eslint-config-vue",
+  "repository": {
+    "url": "https://github.com/soybeanjs/eslint-config-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/soybeanjs/eslint-config-vue/issues"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

@@ -104,11 +104,14 @@ export async function defineConfig(overrides?: Record<string, string>): Promise<
         // ],
         'vue/define-props-declaration': ['warn', 'type-based'],
         'vue/html-comment-content-newline': 'warn',
-        'vue/multi-word-component-names': 'warn',
+        'vue/html-self-closing': 'off',
+        'vue/max-attributes-per-line': 'off',
+        'vue/multi-word-component-names': 'off',
         'vue/next-tick-style': ['warn', 'promise'],
         'vue/no-duplicate-attr-inheritance': 'warn',
         'vue/no-required-prop-with-default': 'warn',
-        'vue/no-static-inline-styles': 'warn',
+        'vue/no-reserved-component-names': 'off',
+        'vue/no-static-inline-styles': 'off',
         'vue/no-template-target-blank': 'error',
         'vue/no-this-in-before-route-enter': 'error',
         'vue/no-undef-properties': 'warn',
@@ -135,7 +138,9 @@ export async function defineConfig(overrides?: Record<string, string>): Promise<
             useAttrs: 'attrs'
           }
         ],
+        'vue/singleline-html-element-content-newline': 'off',
         'vue/valid-define-options': 'warn',
+        'vue/valid-v-slot': 'off',
         ...overrides
       }
     }
