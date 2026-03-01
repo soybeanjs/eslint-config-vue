@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-vue",
+  "name": "@soybeanjs/eslint-config-vue",
   "version": "0.0.0",
   "private": true,
   "files": [
@@ -31,10 +31,16 @@
     "typecheck": "tsc --noEmit --skipLibCheck",
     "upkg": "soy update-pkg"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint-plugin-vue": "^10.8.0",
+    "vue-eslint-parser": "^10.4.0"
+  },
   "devDependencies": {
     "@soybeanjs/cli": "1.5.0",
     "@types/node": "25.3.3",
+    "eslint": "^10.0.2",
     "lint-staged": "16.3.1",
     "oxfmt": "^0.35.0",
     "oxlint": "^1.50.0",

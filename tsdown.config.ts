@@ -5,6 +5,7 @@ export default defineConfig({
   platform: 'neutral',
   clean: true,
   dts: true,
+  external: ['eslint/config'],
   sourcemap: false,
   minify: false
 });
