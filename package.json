@@ -51,6 +51,7 @@
     "vue-eslint-parser": "^10.4.0"
   },
   "devDependencies": {
+    "@antfu/eslint-define-config": "1.23.0-2",
     "@soybeanjs/cli": "1.7.2",
     "@types/node": "25.9.1",
     "eslint": "^10.4.0",

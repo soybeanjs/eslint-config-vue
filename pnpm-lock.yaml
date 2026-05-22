@@ -21,6 +21,9 @@ importers:
         specifier: ^10.4.0
         version: 10.4.0(eslint@10.4.0(jiti@2.6.1))
     devDependencies:
+      '@antfu/eslint-define-config':
+        specifier: 1.23.0-2
+        version: 1.23.0-2
       '@soybeanjs/cli':
         specifier: 1.7.2
         version: 1.7.2
@@ -53,6 +56,10 @@ importers:
         version: 6.0.3
 
 packages:
+
+  '@antfu/eslint-define-config@1.23.0-2':
+    resolution: {integrity: sha512-LvxY21+ZhpuBf/aHeBUtGQhSEfad4PkNKXKvDOSvukaM3XVTfBhwmHX2EKwAsdq5DlfjbT3qqYyMiueBIO5iDQ==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0', pnpm: '>= 8.6.0'}
 
   '@babel/generator@8.0.0-rc.5':
     resolution: {integrity: sha512-nFZPWz3FHIS7y6rMIVoa/WBwjdutfIaRJIBQjzn+t3RnecZoRNlGmGcyR2wb0T/IgSd50Kz/6dG8/LvMCRunjg==}
@@ -1577,6 +1584,8 @@ packages:
     engines: {node: '>=18'}
 
 snapshots:
+
+  '@antfu/eslint-define-config@1.23.0-2': {}
 
   '@babel/generator@8.0.0-rc.5':
     dependencies:

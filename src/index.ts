@@ -1,12 +1,18 @@
 import type { Config } from 'eslint/config';
 import { interopDefault } from './shared';
+import { GLOB_EXCLUDE, GLOB_VUE } from './glob';
+import type { Options } from './types';
 
-export async function defineConfig(overrides?: Record<string, string>): Promise<Config[]> {
+export async function defineConfig(options?: Options, ...configs: (Config | Promise<Config>)[]): Promise<Config[]> {
+  const { ignores = GLOB_EXCLUDE, overrides = {}, files = [GLOB_VUE] } = options || {};
+
   const [pluginVue, parserVue, pluginTs] = await Promise.all([
     interopDefault(import('eslint-plugin-vue')),
     interopDefault(import('vue-eslint-parser')),
     interopDefault(import('@typescript-eslint/eslint-plugin'))
   ]);
+
+  const resolvedConfigs = await Promise.all(configs);
 
   const { rules: recommendedRules } = pluginTs.configs['eslint-recommended'].overrides![0];
 
@@ -65,7 +71,8 @@ export async function defineConfig(overrides?: Record<string, string>): Promise<
       }
     },
     {
-      files: ['**/*.vue'],
+      files,
+      ignores,
       languageOptions: {
         parser: parserVue,
         parserOptions: {
@@ -96,12 +103,6 @@ export async function defineConfig(overrides?: Record<string, string>): Promise<
         'vue/custom-event-name-casing': ['warn', 'camelCase'],
         'vue/define-emits-declaration': ['warn', 'type-based'],
         'vue/define-macros-order': 'off',
-        // 'vue/define-macros-order': [
-        //   'warn',
-        //   {
-        //     order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots']
-        //   }
-        // ],
         'vue/define-props-declaration': ['warn', 'type-based'],
         'vue/html-comment-content-newline': 'warn',
         'vue/html-self-closing': 'off',
@@ -146,5 +147,5 @@ export async function defineConfig(overrides?: Record<string, string>): Promise<
     }
   ];
 
-  return vueConfig;
+  return [...vueConfig, ...resolvedConfigs];
 }
