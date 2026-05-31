@@ -45,21 +45,21 @@
     "upkg": "soy update-pkg"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.59.4",
-    "@typescript-eslint/parser": "^8.59.4",
+    "@antfu/eslint-define-config": "1.23.0-2",
+    "@typescript-eslint/eslint-plugin": "^8.60.0",
+    "@typescript-eslint/parser": "^8.60.0",
     "eslint-plugin-vue": "^10.9.1",
     "vue-eslint-parser": "^10.4.0"
   },
   "devDependencies": {
-    "@antfu/eslint-define-config": "1.23.0-2",
     "@soybeanjs/cli": "1.7.2",
     "@types/node": "25.9.1",
-    "eslint": "^10.4.0",
-    "lint-staged": "17.0.5",
-    "oxfmt": "^0.51.0",
-    "oxlint": "^1.66.0",
+    "eslint": "^10.4.1",
+    "lint-staged": "17.0.6",
+    "oxfmt": "^0.52.0",
+    "oxlint": "^1.67.0",
     "simple-git-hooks": "2.13.1",
-    "tsdown": "0.22.0",
+    "tsdown": "0.22.1",
     "tsx": "4.22.3",
     "typescript": "6.0.3"
   },
@@ -70,5 +70,5 @@
   "lint-staged": {
     "*": "oxlint . --fix && oxfmt"
   },
-  "packageManager": "pnpm@11.2.2"
+  "packageManager": "pnpm@11.5.0"
 }
